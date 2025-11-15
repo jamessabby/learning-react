@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <!-- This external library is specific for websites -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      const div = (
+        <div>
+          <h3>1a.</h3>
+          <button>Good job!</button>
+
+          <h3>1b.</h3>
+          <p>My name is James</p>
+
+          <h3>1c.</h3>
+          <p>Cotton socks</p>
+          <p>Price: $10</p>
+          <button>Add to cart</button>
+        </div>
+      );
+      const container = document.querySelector(".js-container");
+      ReactDOM.createRoot(container).render();
+    </script>
+  </body>
+</html>

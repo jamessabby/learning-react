@@ -1,0 +1,22 @@
+- Started the Chatbot project
+
+- component = piece of a website
+- In react, component name must start in a capital letter (PascalCase)
+
+Main idea of React:
+  - Create our own HTML element and attributes
+
+Fragment (<></>):
+  - allows us to group elements without an extra div  
+
+Props: 
+  - an object that contains all the attributes to your react components
+  - properties
+
+Destructuring:
+  - allows us to take a property directly out of an object and declare a variable with their names that contains them
+
+Guard Operator (&&):
+  - we can directly insert an if-statement inside a JSX
+
+- Rendering a component (like App) is a good practice instead of a div

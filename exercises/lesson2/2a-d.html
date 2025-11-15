@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <!-- This external library is specific for websites -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function LoginForm() {
+        return (
+          <>
+            <div>
+              <input type="text" placeholder="Email" size="20" />
+            </div>
+            <div>
+              <input type="password" placeholder="Password" size="20" />
+            </div>
+            <button>Login</button>
+            <button>Sign up</button>
+          </>
+        );
+      }
+
+      function App() {
+        return (  
+          <>
+            <p>Hello, welcome to my website</p>
+            <LoginForm />
+          </>
+        );
+      }
+
+      const container = document.querySelector(".js-container");
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
