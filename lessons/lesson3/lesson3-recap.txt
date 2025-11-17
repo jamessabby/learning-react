@@ -1,0 +1,12 @@
+State = data that is connected to HTML
+      = when we update this data, it will update the HTML
+      = save data that changes overtime
+
+- In react, we should not modify the data directly.
+- We should always create a copy, and then modify the copy.
+
+Array Destructuring  = Shortcut for updating arrays with useState
+                      = The order matters
+
+Lifting the state up = Moving the state up to the outer component 
+                      = Share between multiple components 

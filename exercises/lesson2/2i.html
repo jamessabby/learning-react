@@ -14,32 +14,55 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      function ProductDetails({ product, price, discountPrice }) {
-        const value1 = (
-          <div>
-            {product}
+      // MY SOLUTION = BAD PRACTICE, REPEATS CODE
+      // function ProductDetails({ product, price, discountPrice }) {
+      //   const value1 = (
+      //     <div>
+      //       {product}
 
-            <>
-              <del>
-                <p>Price: ${price}</p>
-              </del>
-              <p>Discount Price: ${discountPrice}</p>
-            </>
+      //       <>
+      //         <del>
+      //           <p>Price: ${price}</p>
+      //         </del>
+      //         <p>Discount Price: ${discountPrice}</p>
+      //       </>
+      //       <button>Add to cart</button>
+      //     </div>
+      //   );
+
+      //   const value2 = (
+      //     <div>
+      //       {product}
+      //       <p>Price: ${price}</p>
+      //       <button>Add to cart</button>
+      //     </div>
+      //   );
+      //   const result = discountPrice ? value1 : value2;
+      //   return result;
+      // }
+
+      function ProductDetails({ product, price, discountPrice, imageSrc }) {
+        return (
+          <div>
+            <img src={imageSrc} width="150" />
+            <br />
+            <p>{product}</p>
+
+            {discountPrice ? (
+              <>
+                <p>
+                  <del>Price: ${price}</del>
+                </p>
+                <p>Discounted Price: ${price}</p>
+              </>
+            ) : (
+              <p>Price ${price}</p>
+            )}
+
             <button>Add to cart</button>
           </div>
         );
-
-        const value2 = (
-          <div>
-            {product}
-            <p>Price: ${price}</p>
-            <button>Add to cart</button>
-          </div>
-        );
-        const result = discountPrice ? value1 : value2;
-        return result;
       }
-
       function App() {
         return (
           <>
@@ -47,9 +70,18 @@
               product="Cotton socks"
               price="10.90"
               discountPrice="5.45"
+              imageSrc="/images/cotton-socks.png"
             />
-            <ProductDetails product="Tennis balls" price="6.00" />
-            <ProductDetails product="Plain T-shirt" price="7.99" />
+            <ProductDetails
+              product="Tennis balls"
+              price="6.00"
+              imageSrc="/images/tennis-balls.png"
+            />
+            <ProductDetails
+              product="Plain T-shirt"
+              price="7.99"
+              imageSrc="/images/plain-t-shirt.png"
+            />
           </>
         );
       }
