@@ -1,0 +1,15 @@
+Hooks:
+  - insert React features into our component 
+  - put them at the top of the component
+  - React will run this function after component is created and every time the component is updated
+  
+    > useState()
+    > useEffect()
+    > useRef()
+
+
+Dependency Array:
+  - control when use effect runs
+  
+BEST PRACTICE:
+  - give useEffect a dependency array to avoid running to often  
