@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Basics</title>
+    <style>
+      body {
+        font-style: "Arial";
+      }
+      .header {
+        font-size: 30px;
+      }
+      input {
+        display: inline-block;
+        width: 150px;
+        border-radius: 5px;
+        border: solid 1px;
+        padding: 7px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      .login-btn,
+      .sign-in-btn {
+        background-color: rgb(0, 123, 255);
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <!-- This external library is specific for websites -->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function App() {
+        const [showPassword, setShowPassword] = React.useState(false);
+        function seePassword() {
+          if (showPassword) {
+            setShowPassword(false);
+          } else {
+            setShowPassword(true);
+          }
+        }
+        return (
+          <>
+            <div>
+              <p className="header">Hello welcome to my website</p>
+              <input type="email" placeholder="Email" />
+              <div>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                />
+                <button className="show-button" onClick={seePassword}>
+                  Show
+                </button>
+              </div>
+
+              <button className="login-btn">Login</button>
+              <button className="sign-in-btn">Sign up</button>
+            </div>
+          </>
+        );
+      }
+
+      const container = document.querySelector(".js-container");
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

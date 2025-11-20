@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chatbot</title>
+    <title>SabGPT</title>
     <style>
       body {
         font-family: Arial;
@@ -151,7 +151,7 @@
               placeholder="Send a message to a chatbot"
               size="30"
               onChange={saveInputText}
-              value={inputText} // controlled input
+              value={inputText}
               onKeyDown={pressKeyboard}
               className="chat-input"
               disabled={isLoading}
@@ -211,8 +211,8 @@
           <div className="chat-messages-container" ref={chatMessagesRef}>
             {chatMessages.map((chatMessage) => {
               return (
-                <ChatMessage // chat message component
-                  message={chatMessage.message} // its properties are from chat message objects
+                <ChatMessage
+                  message={chatMessage.message}
                   sender={chatMessage.sender}
                   key={chatMessage.id}
                 />
@@ -224,7 +224,6 @@
 
       function App() {
         const [chatMessages, setChatMessages] = React.useState([
-          // chat messages initial objects
           {
             message: "Hello chatbot",
             sender: "user",
